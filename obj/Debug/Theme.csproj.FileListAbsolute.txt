@@ -1,0 +1,14 @@
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\bin\Debug\Theme.exe
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\bin\Debug\Theme.pdb
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\bin\Debug\HtmlRenderer.dll
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\bin\Debug\HtmlRenderer.WPF.dll
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme.csprojAssemblyReference.cache
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\App.baml
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\App.g.cs
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme_Content.g.cs
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme_MarkupCompile.cache
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme.g.resources
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme.csproj.CopyComplete
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme.exe
+C:\Users\Romain Ranaivoson\AppData\Local\Playnite\Themes\Fullscreen\Inshallah\obj\Debug\Theme.pdb

@@ -1,0 +1,161 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                    
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style TargetType="{x:Type GameDetails}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GameDetails}">
+                    <Grid Background="{DynamicResource MainBackgourndBrush}"
+                          x:Name="PART_ViewHost"
+                          d:DesignWidth="{StaticResource DesignWidth}"
+                          d:DesignHeight="{StaticResource DesignHeight}"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}"
+                          KeyboardNavigation.DirectionalNavigation="Contained"
+                          KeyboardNavigation.TabNavigation="Contained">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="8*" />
+                            <RowDefinition Height="2.2*" />
+                            <RowDefinition Height="1.5*" />
+                        </Grid.RowDefinitions>
+                        
+                        <FadeImage HorizontalAlignment="Center" VerticalAlignment="Top"
+                                   Grid.RowSpan="4"
+                                   x:Name="PART_ImageBackground" />
+
+                        <Border Background="{DynamicResource GameDetailsBackgroundBrush}"
+                                Grid.Row="1" Grid.RowSpan="3">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding DisplayBackgroundImage}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="3" Height="Auto" Margin="0,40,0,0">
+                            <ContentControl Style="{DynamicResource ButtonPromptB}" Height="35"
+                                                    VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock Text="{DynamicResource LOCBackLabel}" Margin="0,0,20,0"
+                                               Foreground="White" FontSize="25" VerticalAlignment="Center"/>
+                            <ContentControl Style="{DynamicResource ButtonPromptA}" Margin="0,0,10,0"
+                                                    Height="35" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource LOCOKLabel}" Margin="0,0,30,0"
+                                               Foreground="White" FontSize="25"  VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <Border CornerRadius="3" BorderThickness="3" BorderBrush="{DynamicResource ControlBackgroundBrush}"
+                                Margin="150,0,0,0" Grid.Row="1"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left">
+                            <Image Source="{Binding IconObjectCached}" MaxWidth="450"/>
+                        </Border>
+
+                        <Image Grid.Row="0"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Margin="24"
+                               Source="{Binding LibraryPlugin.LibraryIcon}"
+                               Height="48" RenderOptions.BitmapScalingMode="Fant">
+                            <Image.Effect>
+                                <DropShadowEffect Color="White" BlurRadius="20" ShadowDepth="0"
+                                                  RenderingBias="Quality" Opacity="1"/>
+                            </Image.Effect>
+                        </Image>
+
+                        <DockPanel Grid.Row="2"
+                                   Margin="80,5,5,5"
+                                   HorizontalAlignment="Left">
+
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                       Text="{Binding DisplayName}"
+                                       Foreground="White" FontFamily="{DynamicResource FontOpenSansBold}"
+                                       FontSize="38" DockPanel.Dock="Top">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="Black"
+                                                      RenderingBias="Quality" Opacity="1"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" FontWeight="Light"
+                                               FontFamily="{DynamicResource FontOpenSansLight}" Foreground="LightGray"
+                                               Text="{DynamicResource LOCTimePlayed}"
+                                               Margin="0,0,5,0" FontSize="20"/>
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" FontWeight="Light"  Foreground="LightGray" FontSize="20"
+                                               Text=":" Margin="0,0,5,0"/>
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" FontWeight="Light"  Foreground="LightGray" FontSize="20"
+                                               Text="{Binding Playtime, Converter={StaticResource LongToTimePlayedConverter}}"/>
+                                        </StackPanel>
+                                        <!--<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,20,20,20">
+                                <StackPanel>
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
+                                               Text="{DynamicResource LOCTimePlayed}"
+                                               Margin="0,0,0,10" />
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding Playtime, Converter={StaticResource LongToTimePlayedConverter}}" />
+                                </StackPanel>
+                                
+                                <StackPanel Margin="50,0,0,0">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
+                                               Text="{DynamicResource LOCGameLastActivityTitle}"
+                                               Margin="0,0,0,10" />
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding LastActivity, Converter={StaticResource DateTimeToLastPlayedConverter}}" />
+                                </StackPanel>
+
+                                <StackPanel Margin="50,0,0,0">
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontFamily="{DynamicResource FontTitilliumWebBold}"
+                                               Text="{DynamicResource LOCGameReleaseDateTitle}"
+                                               Margin="0,0,0,10" />
+                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding ReleaseDate, Converter={StaticResource NullableDateToStringConverter}}" />
+                                </StackPanel>-->
+
+                            <!--</StackPanel>-->
+
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" DockPanel.Dock="Top">
+                                <ButtonEx Style="{DynamicResource ButtonPlay}" x:Name="PART_ButtonContext" HorizontalContentAlignment="Center" />
+                                <ButtonEx x:Name="PART_ButtonOptions" Style="{DynamicResource ButtonMore}"
+                                          Content="..."
+                                          Margin="15,0,0,0" BorderThickness="2" HorizontalContentAlignment="Center" />
+                            </StackPanel>
+                            </StackPanel>
+
+                            <!--<Border Margin="-3,20,-3,-3" DockPanel.Dock="Top">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="Transparent" />
+                                        <Setter Property="BorderThickness" Value="3" />
+                                        <Style.Triggers>
+                                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                                <Setter Property="BorderBrush" Value="{DynamicResource SelectionBrush}" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <ScrollViewerEx>
+                                    <HtmlTextView HtmlText="{Binding Description}"
+                                                  HtmlFontSize="16"
+                                                  HtmlForeground="{DynamicResource TextColor}"
+                                                  LinkForeground="{DynamicResource GlyphColor}"
+                                                  FocusVisualStyle="{x:Null}" />
+                                </ScrollViewerEx>
+                            </Border>-->
+
+                        </DockPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ToggleButtonTopFilter" TargetType="ToggleButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Background="{TemplateBinding Background}"
+                            Margin="10,0,10,0">
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}" FontSize="34"
+                                   FontFamily="{DynamicResource FontOpenSans}"
+                                   x:Name="TextContent">
+                            <StackPanel Orientation="Horizontal">
+                                           <TextBlock Text="" Style="{DynamicResource TextBlockBaseStyle}"
+                                           FontSize="0.1" Foreground="#F00980" Margin="-10,0,0,0"
+                                           HorizontalAlignment="Center"
+                                           x:Name="SelectionBullet" Visibility="Hidden"/>
+                                <ContentPresenter />
+                            </StackPanel>
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="FontWeight" Value="Bold" TargetName="TextContent" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="SelectionBullet" />
+                            <Setter Property="Foreground" Value="#F00980" TargetName="TextContent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
