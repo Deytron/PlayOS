@@ -12,6 +12,8 @@ Simply drag and drop the .pthm file into Playnite's window (while in desktop mod
 
 ## Customization
 
+This theme uses games' icons as logos, so you will need to edit them to have them properly displayed like in the screenshots.
+
 You can configure the theme and use all the options available in the settings menu, except for the Item Spacing. This setting is fixed.
 
 Below is my recommended configuration to make your library look like the screenshots :
