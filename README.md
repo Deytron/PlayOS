@@ -6,6 +6,8 @@ This theme aims to be as minimal as possible.
 
 ![](https://i.imgur.com/x2bCmyq.jpg)
 
+![](https://i.imgur.com/CGxtZnt.png)
+
 ## Installation
 
 Simply drag and drop the .pthm file into Playnite's window (while in desktop mode).
