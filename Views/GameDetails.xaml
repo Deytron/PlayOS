@@ -54,7 +54,7 @@
                                 Margin="150,0,0,0" Grid.Row="1"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Left">
-                            <Image Source="{Binding IconObjectCached}" MaxWidth="450"/>
+                            <Image Source="{Binding IconObjectCached}" MaxHeight="300" MaxWidth="650" />
                         </Border>
 
                         <Image Grid.Row="0"
